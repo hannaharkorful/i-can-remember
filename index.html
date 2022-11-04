@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="Content-Security-Policy"
+      content="default-src: http: https: 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>i can remember</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qll0kov.css">
+    <script src="script.js"></script>
+    <style>
+
+      img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+      }
+
+      figure {
+        text-align: center;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1> i can remember.</h1>
+
+    <main>
+
+      <form id = "searchbutton">
+        <label for="search"></label>
+        <input id="search" type="search"/>
+        <button id="btnSearch"></button>
+      </form>
+
+        <div class="out"></div>
+    </main>
+
+<!--       random characters output -->
+      <div id="tw"></div>
+
+<!--       sticker search function -->
+<div id = "sticker">
+    <script>
+      let APIKEY = "rZyNnev7foRTw5C5hmcpzynezyJC2nfQ";
+      document.addEventListener("DOMContentLoaded", init);
+      function init() {
+        document.getElementById("btnSearch").addEventListener("click", ev => {
+          // stop the page reload 
+          ev.preventDefault(); 
+          let url = `https://api.giphy.com/v1/stickers/search?api_key=${APIKEY}&offset=1&limit=1&q=`;
+          let str = document.getElementById("search").value.trim();
+          url = url.concat(str);
+          console.log(url);
+          fetch(url)
+            .then(response => response.json())
+            .then(content => {
+
+              //  data, pagination, meta
+              console.log(content.data);
+              console.log("META", content.meta);
+              let fig = document.createElement("figure");
+              let img = document.createElement("img");
+              let fc = document.createElement("figcaption");
+              img.src = content.data[0].images.downsized.url;
+              img.alt = content.data[0].title;
+              fc.textContent = content.data[0].title;
+              fig.appendChild(img);
+              fig.appendChild(fc);
+              let out = document.querySelector(".out");
+              out.insertAdjacentElement("afterbegin", fig);
+              document.querySelector("#search").value = "";
+            })
+            .catch(err => {
+              console.error(err);
+            });
+        });
+      }
+    </script>
+  </div>
+  </body>
+</html>

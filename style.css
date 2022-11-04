@@ -1,0 +1,46 @@
+h1{
+font-family: arial, sans-serif;
+font-style: normal;
+font-weight: lighter;
+font-size: 55px;
+color: #000;
+text-align: center;
+}
+
+
+body{
+background-color : #fff;
+color: #000;
+margin:0; padding:0; border:0; 
+
+}
+
+input{
+text-size: 50px;
+color: #000;
+border: 2px solid #000 ;
+}
+
+#tw {
+font-family: arial, sans-serif;
+font-style: normal;
+font-size:32px;
+color: #000;
+line-height: 35px;
+position: absolute;
+top: 29%;
+left: 50%;
+transform: translate(-50%);
+}
+
+#searchbutton{
+font-family: mundial, sans-serif;
+font-style: light;
+font-size: 30px;
+color: #000;
+top: 40%;
+left: 50%;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}

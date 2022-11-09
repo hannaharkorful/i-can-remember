@@ -6,7 +6,7 @@ function createLetter()
 var intI = 0;
 var LargeText = "";
 var intValue = 0;
-for (intI = 0 ; intI < 100 ; intI++){
+for (intI = 0 ; intI < 3000 ; intI++){
 
 var r= Math.round(Math.random() * 7);
 if(r==1){   

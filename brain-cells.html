@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Brain Cells</title>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+			<script src='script.js'></script>
+			<link rel="stylesheet" href="style.css">
+
+			<style>
+				body,canvas{margin:0;border:0;padding:0;}
+				body{
+					display:flex;
+					align-items:center;
+					justify-content:center;
+				}
+				canvas{
+/*					cursor:not-allowed;*/
+					position:fixed;
+					top:0;
+					left:0;
+					background-color:#FFF;
+				}
+			</style>
+		</head>
+
+		<body>
+			<canvas width="1825" height="647"></canvas>
+			<script>
+				
+canvas = document.querySelectorAll("canvas")[0];
+ctx = canvas.getContext('2d');
+canvas.resizeHandler = function () {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+canvas.resizeHandler();
+window.addEventListener("resize",canvas.resizeHandler,false);
+var t, start = Date.now();
+function sin(a){
+return Math.sin(a);
+}
+function cos(a){
+return Math.cos(a);
+}
+var PI = Math.PI;
+
+function animloop() {
+animloop.id = requestAnimationFrame(animloop);
+
+t = (Date.now()-start)/1000;
+r = canvas.width/60;
+
+space = r*2 //canvas.width/25;
+
+ctx.globalCompositeOperation = 'source-over';
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+for (x=-space*4;x<=canvas.width+space*4;x+=space){
+	for (y=-space*4;y<=canvas.height+space*4;y+=space){
+		xp=x/canvas.width*Math.PI;
+		yp=y/canvas.height*Math.PI;
+		xo = sin(t+yp*sin(t/30))*r*9*sin(t/33+yp);
+		yo = cos(t+xp*cos(t/31))*r*9*cos(t/32+xp);
+		ctx.beginPath();
+		ctx.arc(x+Math.round(Math.random() * 6)*xo,y+yo,r,0,Math.PI*3,false);
+		ctx.closePath();
+		ctx.fillStyle = "#000";
+		ctx.fill();
+		// ctx.strokeStyle = 'black';
+		// lines
+		ctx.fillRect(x , y+yo , Math.round(Math.random() * 0*r), 0.5);
+	}
+}
+}
+animloop();
+
+			</script>
+		</body>
+	</html>

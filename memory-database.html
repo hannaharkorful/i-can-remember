@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<title>Memory Database</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://use.typekit.net/qll0kov.css">
+<script src="script.js"></script>
+
+<style>
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+text {
+text-align: center;
+color: white;
+}
+</style>
+</head>
+
+<style>
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+text {
+text-align: center;
+color: white;
+}
+</style>
+
+<body></body>
+
+<!--       random characters output -->
+<div id="tw"></div>
+
+<!-- scroll: jumps from top to bottom -->
+<!-- <div id="top"></div>
+<div id="bottom"></div>
+<a href="#" onclick="pageScroll(); return false;">start</a>
+<a href="#" onclick="stopScroll(); return false;">stop</a>
+<style type="text/css">
+	#top { border: 1px solid black;  height: 20000px; }
+	#bottom { border: 1px solid red; }
+</style> -->
+
+<!-- spoonacular api -->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<input id="search" ><button onclick="getrecipe(document.getElementById('search').value)">Search</button>
+<div id="output"></div>
+<script>
+
+function getsource(id){
+$.ajax({
+url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=7ff0d1e29e6c44f597876cc5f24031d5",
+success: function(res) {
+
+document.getElementById("sourceLink").innerHTML=res.sourceUrl
+document.getElementById("sourceLink").href=res.sourceUrl
+}
+});
+}
+function getrecipe(q){
+$.ajax({
+url:"https://api.spoonacular.com/recipes/search?apiKey=7ff0d1e29e6c44f597876cc5f24031d5&number=1&query="+q,
+success: function(res) {
+
+document.getElementById("output").innerHTML=""+res.results[0].title+"<img src='"+res.baseUri+res.results[0].image+"' width='400' /><br>"+res.results[0].readyInMinutes+""
+getsource(res.results[0].id)
+}
+});
+}
+
+</script> -->
+</html>

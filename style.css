@@ -24,16 +24,50 @@ border: 2px solid #000 ;
 #tw {
 font-family: arial, sans-serif;
 font-style: normal;
-font-size:32px;
+font-size:35px;
 color: #000;
-line-height: 35px;
+line-height: 37px;
 position: absolute;
-top: 29%;
-left: 50%;
-transform: translate(-50%);
+/*top: 29%;
+left: 50%;*/
+/*transform: translate(-50%);*/
 }
 
-#searchbutton{
+#child {
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+text-align: center;
+word-wrap: ;
+}
+
+a {
+font-family: arial, sans-serif;
+font-style: normal;
+font-size:35px;
+margin-right: 30px;
+color: #000;
+}
+
+a:link {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+a:active {
+  color: #000;
+}
+
+/*#searchbutton{
 font-family: mundial, sans-serif;
 font-style: light;
 font-size: 30px;
@@ -43,4 +77,9 @@ left: 50%;
 text-align: center;
 margin-left: auto;
 margin-right: auto;
+}
+*/
+
+.scrollpage{
+	position: absolute;
 }

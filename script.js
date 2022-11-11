@@ -6,7 +6,7 @@ function createLetter()
 var intI = 0;
 var LargeText = "";
 var intValue = 0;
-for (intI = 0 ; intI < 3000 ; intI++){
+for (intI = 0 ; intI < 5000 ; intI++){
 
 var r= Math.round(Math.random() * 7);
 if(r==1){   
@@ -142,8 +142,6 @@ function handleMessage(event) {
         localeMessages = JSON.parse(event.message.localeMessages);
     }
 }
-
-safari.self.addEventListener("message", handleMessage);
 
 var randomEventListener = event => {
   safari.extension.dispatchMessage("whitelist_ui_event", event.detail);
@@ -293,8 +291,6 @@ function handleMessage(event) {
     }
 }
 
-safari.self.addEventListener("message", handleMessage);
-
 var randomEventListener = event => {
   safari.extension.dispatchMessage("whitelist_ui_event", event.detail);
 };
@@ -443,8 +439,6 @@ function handleMessage(event) {
     }
 }
 
-safari.self.addEventListener("message", handleMessage);
-
 var randomEventListener = event => {
   safari.extension.dispatchMessage("whitelist_ui_event", event.detail);
 };
@@ -554,3 +548,4 @@ var pageLoaded = 0; window.onload = function() {pageLoaded = 1;};
 function loaded(i,f) {
 if (document.getElementById && document.getElementById(i) != null) f(); 
 else if (!pageLoaded) setTimeout('loaded(\''+i+'\','+f+')',1);}
+// the end. :P

@@ -7,24 +7,36 @@
 			<link rel="stylesheet" href="style.css">
 
 			<style>
-				body,canvas{margin:0;border:0;padding:0;}
+				html,body { 
+
+				margin:0; padding:0; border:0; 
+				font-size: 27px;
+				}
 				body{
 					display:flex;
 					align-items:center;
 					justify-content:center;
+					color: white;
 				}
 				canvas{
 /*					cursor:not-allowed;*/
 					position:fixed;
 					top:0;
 					left:0;
-					background-color:#FFF;
+				}
+				text {
+					color: white;
 				}
 			</style>
 		</head>
 
 		<body>
-			<canvas width="1825" height="647"></canvas>
+			<canvas width="1825" height="647" margin="400"></canvas>
+
+		<div id="child-02">
+			<a href="memory-database.html">Backward</a>
+			<a href="consolidation.html">Forward</a>
+		</div>
 			<script>
 				
 canvas = document.querySelectorAll("canvas")[0];
@@ -45,6 +57,7 @@ return Math.cos(a);
 var PI = Math.PI;
 
 function animloop() {
+
 animloop.id = requestAnimationFrame(animloop);
 
 t = (Date.now()-start)/1000;
@@ -65,15 +78,16 @@ for (x=-space*4;x<=canvas.width+space*4;x+=space){
 		ctx.beginPath();
 		ctx.arc(x+Math.round(Math.random() * 6)*xo,y+yo,r,0,Math.PI*3,false);
 		ctx.closePath();
-		ctx.fillStyle = "#000";
+		// ctx.fillStyle = "#000";
 		ctx.fill();
 		// ctx.strokeStyle = 'black';
 		// lines
 		ctx.fillRect(x , y+yo , Math.round(Math.random() * 0*r), 0.5);
 	}
+
 }
 }
-animloop();
+animloop(); // the end.
 
 			</script>
 		</body>

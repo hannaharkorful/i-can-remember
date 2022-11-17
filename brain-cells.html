@@ -5,90 +5,71 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 			<script src='script.js'></script>
 			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" href="https://use.typekit.net/qll0kov.css">
 
 			<style>
-				html,body { 
-
-				margin:0; padding:0; border:0; 
-				font-size: 27px;
-				}
-				body{
-					display:flex;
-					align-items:center;
-					justify-content:center;
-					color: white;
-				}
-				canvas{
-/*					cursor:not-allowed;*/
-					position:fixed;
-					top:0;
-					left:0;
-				}
-				text {
-					color: white;
-				}
 			</style>
 		</head>
 
 		<body>
 			<canvas width="1825" height="647" margin="400"></canvas>
 
-		<div id="child-02">
-			<a href="memory-database.html">Backward</a>
-			<a href="consolidation.html">Forward</a>
-		</div>
+				<div id="child">
+					<div class='backward-button'>
+						<a href="memory-database.html">Backward</a>
+					</div>
+
+					<div class='forward-button'>
+						<a href="consolidation.html">Forward</a>
+					</div>
+				</div>
 			<script>
-				
-canvas = document.querySelectorAll("canvas")[0];
-ctx = canvas.getContext('2d');
-canvas.resizeHandler = function () {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-}
-canvas.resizeHandler();
-window.addEventListener("resize",canvas.resizeHandler,false);
-var t, start = Date.now();
-function sin(a){
-return Math.sin(a);
-}
-function cos(a){
-return Math.cos(a);
-}
-var PI = Math.PI;
 
-function animloop() {
+				canvas = document.querySelectorAll("canvas")[0];
+				ctx = canvas.getContext('2d');
+				canvas.resizeHandler = function () {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+				}
+				canvas.resizeHandler();
+				window.addEventListener("resize",canvas.resizeHandler,false);
+				var t, start = Date.now();
+				function sin(a){
+				return Math.sin(a);
+				}
+				function cos(a){
+				return Math.cos(a);
+				}
+				var PI = Math.PI;
 
-animloop.id = requestAnimationFrame(animloop);
+				function animloop() {
 
-t = (Date.now()-start)/1000;
-r = canvas.width/60;
+				animloop.id = requestAnimationFrame(animloop);
 
-space = r*2 //canvas.width/25;
+				t = (Date.now()-start)/1000;
+				r = canvas.width/60;
 
-ctx.globalCompositeOperation = 'source-over';
+				space = r*2 //canvas.width/25;
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+				ctx.globalCompositeOperation = 'source-over';
 
-for (x=-space*4;x<=canvas.width+space*4;x+=space){
-	for (y=-space*4;y<=canvas.height+space*4;y+=space){
-		xp=x/canvas.width*Math.PI;
-		yp=y/canvas.height*Math.PI;
-		xo = sin(t+yp*sin(t/30))*r*9*sin(t/33+yp);
-		yo = cos(t+xp*cos(t/31))*r*9*cos(t/32+xp);
-		ctx.beginPath();
-		ctx.arc(x+Math.round(Math.random() * 6)*xo,y+yo,r,0,Math.PI*3,false);
-		ctx.closePath();
-		// ctx.fillStyle = "#000";
-		ctx.fill();
-		// ctx.strokeStyle = 'black';
-		// lines
-		ctx.fillRect(x , y+yo , Math.round(Math.random() * 0*r), 0.5);
-	}
+				ctx.clearRect(0,0,canvas.width,canvas.height);
 
-}
-}
-animloop(); // the end.
+				for (x=-space*4;x<=canvas.width+space*4;x+=space){
+				for (y=-space*4;y<=canvas.height+space*4;y+=space){
+				xp=x/canvas.width*Math.PI;
+				yp=y/canvas.height*Math.PI;
+				xo = sin(t+yp*sin(t/30))*r*9*sin(t/33+yp);
+				yo = cos(t+xp*cos(t/31))*r*9*cos(t/32+xp);
+				ctx.beginPath();
+				ctx.arc(x+Math.round(Math.random() * 6)*xo,y+yo,r,0,Math.PI*3,false);
+				ctx.closePath();
+				ctx.fill();
+				}
 
+				}
+				}
+				animloop();
 			</script>
 		</body>
 	</html>

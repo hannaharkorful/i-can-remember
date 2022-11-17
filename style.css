@@ -1,89 +1,73 @@
 h1 {
-text-align: center;
-font-family: helvetica, arial, sans-serif;
-font-weight: normal;
-font-size: 40px;
-color: #000;
-line-height: 25px;}
+  text-align: center;
+  font-family: quatro,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: #000;
+  line-height: 25px;
+}
 
-body{
-background-color : #fff;
-color: #000;
-/*margin:0; padding:0; border:0; */
-display: inline;
+body {
+  background-color : #fff;
+  color: #000;
 }
 
 #tw {
-font-family: helvetica, arial, sans-serif;
-font-style: normal;
-font-size:35px;
-font-weight: normal;
-color: #000;
-line-height: 37px;
-padding-top: 20px;
-position: absolute;
+  font-family: arial, helvetica, sans-serif;
+  font-style: normal;
+  font-size: 35px;
+  color: #000;
+  line-height: 37px;
+  margin-top: 90px;
+  position: absolute;
 }
 
-#child {
-text-align: center;
-font-family: helvetica, arial, sans-serif;
-font-weight: lighter;
-font-size: 27px;
-}
-
-#child-02 {
-text-align: center;
-font-family: helvetica, arial, sans-serif;
-font-weight: lighter;
-font-size: 27px;
-color: white;
-padding-bottom: 300px;
-z-index: 500;
-}
-
-#child-03 {
-text-align: center;
-font-family: helvetica, arial, sans-serif;
-font-weight: lighter;
-font-size: 27px;
-color: white;
-padding-bottom: 300px;
-}
-
-#gif-bw img{
+#gif-bw img {
   width:  50%;
   margin: auto;
   display: block;
 }
 
+.forward-button {
+  font-family: quatro,sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 35px;
+  position: fixed;
+  right: 55px;
+  top: 35px;
+}
+
+.backward-button {
+  font-family: quatro,sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 35px;
+  position: fixed;
+  left: 55px;
+  top: 35px;
+}
+
+.parent-position {
+  position: fixed;
+  top: 30px;
+}
+
 a:link {
-color: #000;
-text-decoration: underline;
+  color: #000;
+  text-decoration: none;
 }
 
 a:visited {
-color: #000;
+  color: #000;
 }
 
 a:hover {
-color: #fff;
-text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 a:active {
-color: #000;
-}
-
-#Forward {
-font-family: helvetica, arial, sans-serif;
-font-weight: lighter;
-font-size: 20px;
-display: inline;
-}
-
-#Backward {
-font-family: helvetica, arial, sans-serif;
-font-weight: lighter;
-font-size: 20px;
-display: inline;
+  color: #000;
 }
